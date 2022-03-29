@@ -1,0 +1,77 @@
+﻿@model LibraryMSMVC.Models.Registration
+@{
+    ViewBag.Title = "index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+} 
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+     <div class="form-horizontal">
+        <h3>Registration</h3>
+         <hr />
+         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+         <div class="form-group">
+              @Html.LabelFor(model => model.UserId, htmlAttributes: new { @class = "control-label col-md-2" })
+              <div class="col-md-10">
+                    @Html.EditorFor(model => model.UserId, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.UserId, "", new { @class = "text-danger" })
+              </div>
+         </div>
+
+         <div class="form-group">
+              @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+               <div class="col-md-10">
+                     @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                     @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+               </div>
+         </div>
+
+         <div class="form-group">
+              @Html.LabelFor(model => model.UserGender, htmlAttributes: new { @class = "control-label col-md-2" })
+              <div class="col-md-10">
+                  @Html.EditorFor(model => model.UserGender, new { htmlAttributes = new { @class = "form-control" } })
+                  @Html.ValidationMessageFor(model => model.UserGender, "", new { @class = "text-danger" })
+              </div>
+         </div>
+
+        <div class="form-group">
+             @Html.LabelFor(model => model.UserDep, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                       @Html.EditorFor(model => model.UserDep, new { htmlAttributes = new { @class = "form-control" } })
+                      @Html.ValidationMessageFor(model => model.UserDep, "", new { @class = "text-danger" })
+             </div>
+        </div>
+
+        <div class="form-group">
+             @Html.LabelFor(model => model.UserAdmNo, htmlAttributes: new { @class = "control-label col-md-2" })
+             <div class="col-md-10">
+                    @Html.EditorFor(model => model.UserAdmNo, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.UserAdmNo, "", new { @class = "text-danger" })
+             </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserEmail, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                   @Html.EditorFor(model => model.UserEmail, new { htmlAttributes = new { @class = "form-control" } })
+                   @Html.ValidationMessageFor(model => model.UserEmail, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+              @Html.LabelFor(model => model.UserPass, htmlAttributes: new { @class = "control-label col-md-2" })
+             <div class="col-md-10">
+                 @Html.EditorFor(model => model.UserPass, new { htmlAttributes = new { @class = "form-control" } })
+                  @Html.ValidationMessageFor(model => model.UserPass, "", new { @class = "text-danger" })
+             </div>
+        </div>
+
+         <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                     <input type="submit" value="Register" class="btn btn-default" />
+                </div>
+          </div>
+     </div>
+}

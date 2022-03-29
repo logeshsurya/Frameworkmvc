@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+<div style="padding-left:40%;padding-right:40%; padding-bottom:5%; padding-top:10%" ; class="col-1 offset-1";class="Login-panel Login-border">
+    <div class="card" heigh="10px" width="2px">
+        <div><h2>Log as</h2></div>
+        <div>
+            <div class="btn btn-block btn-info btn-lg">
+                @Html.ActionLink("User", "Login", "User")
+            </div>
+            <div class="btn btn-block btn-warning btn-lg">
+                @Html.ActionLink("Admin", "Login", "Admin")
+            </div>
+        </div>
+    </div>
+    
+
+</div>
